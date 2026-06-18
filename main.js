@@ -34,4 +34,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const lottoModal = document.getElementById('lotto-modal');
+    const lottoIframe = document.getElementById('lotto-iframe');
+    const lottoOpenBtn = document.getElementById('lotto-open-btn');
+    const lottoCloseBtn = document.getElementById('lotto-modal-close');
+    const lottoBackdrop = document.getElementById('lotto-modal-backdrop');
+
+    function openLottoModal() {
+        lottoIframe.src = 'lotto.html';
+        lottoModal.classList.remove('hidden');
+        lottoModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+    }
+
+    function closeLottoModal() {
+        lottoModal.classList.add('hidden');
+        lottoModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        lottoIframe.src = '';
+    }
+
+    lottoOpenBtn.addEventListener('click', openLottoModal);
+    lottoCloseBtn.addEventListener('click', closeLottoModal);
+    lottoBackdrop.addEventListener('click', closeLottoModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lottoModal.classList.contains('hidden')) {
+            closeLottoModal();
+        }
+    });
 });

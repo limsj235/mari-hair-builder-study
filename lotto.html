@@ -37,11 +37,26 @@
         .number-history {
             scrollbar-width: thin;
         }
+
+        body.modal-embed {
+            min-height: auto;
+        }
+
+        body.modal-embed .lotto-ball {
+            width: 56px;
+            height: 56px;
+            font-size: 22px;
+        }
+
+        body.modal-embed .page-wrap {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-zinc-950 to-black text-white min-h-screen">
 
-    <div class="max-w-2xl mx-auto px-6 py-12">
+    <div class="page-wrap max-w-2xl mx-auto px-6 py-12">
         <!-- Header -->
         <div class="text-center mb-12">
             <div class="inline-flex items-center gap-3 bg-yellow-500 text-black font-bold text-2xl px-8 py-3 rounded-3xl mb-6 shadow-lg">
@@ -247,11 +262,13 @@
             }
         }
         
-        // 초기화
         window.onload = function() {
+            if (window.self !== window.top) {
+                document.body.classList.add('modal-embed');
+            }
+
             renderHistory();
-            
-            // 첫 로드 시 자동 생성
+
             setTimeout(() => {
                 generateLotto();
             }, 800);

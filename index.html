@@ -30,6 +30,7 @@
                 <a href="#stylists" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">스타일리스트</a>
                 <a href="#gallery" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">갤러리</a>
                 <a href="#review" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">후기</a>
+                <a href="#lotto" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">행운</a>
             </div>
 
             <div class="flex items-center gap-3">
@@ -305,6 +306,27 @@
         </div>
     </section>
 
+    <!-- Lucky Lotto -->
+    <section id="lotto" class="py-20 bg-gradient-to-r from-amber-50 via-rose-50 to-amber-50 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
+                <i class="fa-solid fa-clover"></i>
+                마리의 작은 선물
+            </div>
+            <h2 class="section-title text-4xl md:text-5xl font-bold mb-4">시술 전 잠깐, 행운을 확인해보세요</h2>
+            <p class="text-lg text-zinc-600 dark:text-zinc-300 mb-8 leading-relaxed">
+                예약을 기다리는 동안 지루하지 않도록,<br>
+                마리 미용실이 준비한 <strong class="text-rose-600 dark:text-rose-400">행운의 로또 번호</strong>를 뽑아보세요.
+            </p>
+            <button id="lotto-open-btn" type="button"
+                    class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-zinc-900 font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all active:scale-95">
+                <i class="fa-solid fa-ticket"></i>
+                행운의 번호 뽑기
+            </button>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-4">오늘의 행운이 당신에게도 찾아올지도 몰라요!</p>
+        </div>
+    </section>
+
     <!-- Contact & Reservation -->
     <section id="contact" class="py-24 bg-gradient-to-br from-rose-50 to-amber-50 dark:from-zinc-900 dark:to-zinc-950">
         <div class="max-w-4xl mx-auto px-6 text-center">
@@ -374,6 +396,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lotto Modal -->
+    <div id="lotto-modal" class="lotto-modal hidden" aria-hidden="true" role="dialog" aria-labelledby="lotto-modal-title">
+        <div id="lotto-modal-backdrop" class="lotto-modal-backdrop"></div>
+        <div class="lotto-modal-panel">
+            <div class="lotto-modal-header">
+                <h3 id="lotto-modal-title" class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-ticket text-amber-400"></i>
+                    로또 6/45 번호 생성기
+                </h3>
+                <button id="lotto-modal-close" type="button" aria-label="닫기"
+                        class="w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-300 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <iframe id="lotto-iframe" class="lotto-modal-iframe" title="로또 번호 생성기" loading="lazy"></iframe>
+        </div>
+    </div>
 
 </body>
 </html>

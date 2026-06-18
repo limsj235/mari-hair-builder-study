@@ -22,3 +22,70 @@ body, nav, section, footer {
     height: 3px;
     background: linear-gradient(to right, #d4af37, #f5e8c7, #d4af37);
 }
+
+.lotto-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.lotto-modal.hidden {
+    display: none;
+}
+
+.lotto-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.lotto-modal-panel {
+    position: relative;
+    width: 100%;
+    max-width: 42rem;
+    max-height: 90vh;
+    background: #09090b;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    animation: modal-in 0.25s ease;
+}
+
+.lotto-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #27272a;
+    flex-shrink: 0;
+}
+
+.lotto-modal-iframe {
+    width: 100%;
+    height: 70vh;
+    min-height: 480px;
+    border: 0;
+    background: #09090b;
+}
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+body.modal-open {
+    overflow: hidden;
+}
