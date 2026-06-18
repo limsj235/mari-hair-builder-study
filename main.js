@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const GAME_LOTTO_PATH = 'games/lotto.html';
+
     const lottoModal = document.getElementById('lotto-modal');
     const lottoIframe = document.getElementById('lotto-iframe');
     const lottoOpenBtn = document.getElementById('lotto-open-btn');
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lottoBackdrop = document.getElementById('lotto-modal-backdrop');
 
     function openLottoModal() {
-        lottoIframe.src = 'lotto.html';
+        lottoIframe.src = GAME_LOTTO_PATH;
         lottoModal.classList.remove('hidden');
         lottoModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
