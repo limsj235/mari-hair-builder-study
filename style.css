@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', system-ui, sans-serif;
+}
+
+body, nav, section, footer {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://picsum.photos/id/1015/2000/1200');
+    background-size: cover;
+    background-position: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.hair-line {
+    height: 3px;
+    background: linear-gradient(to right, #d4af37, #f5e8c7, #d4af37);
+}
