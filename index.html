@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마리 미용실 | Mari Hair Salon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', system-ui, sans-serif;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .hair-line {
+            height: 3px;
+            background: linear-gradient(to right, #d4af37, #f5e8c7, #d4af37);
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-rose-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">마</div>
+                <div>
+                    <span class="text-2xl font-bold tracking-tight">마리 미용실</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="hover:text-rose-600 transition-colors">소개</a>
+                <a href="#services" class="hover:text-rose-600 transition-colors">시술</a>
+                <a href="#stylists" class="hover:text-rose-600 transition-colors">스타일리스트</a>
+                <a href="#gallery" class="hover:text-rose-600 transition-colors">갤러리</a>
+                <a href="#review" class="hover:text-rose-600 transition-colors">후기</a>
+            </div>
+            
+            <a href="#contact" 
+               class="bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-all flex items-center gap-2">
+                <i class="fa-solid fa-scissors"></i>
+                예약하기
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6 pt-20">
+            <div class="max-w-2xl">
+                <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-6">
+                    당신의 아름다움을<br>더욱 빛나게
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 text-rose-100">
+                    인천에서 가장 감성적인 미용실,<br>
+                    <span class="text-amber-300 font-medium">마리 미용실</span>
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" 
+                       class="bg-white text-zinc-900 hover:bg-amber-100 px-10 py-4 rounded-full font-medium text-lg transition-all flex items-center gap-3">
+                        지금 예약하기
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#gallery" 
+                       class="border-2 border-white hover:bg-white/10 px-8 py-4 rounded-full font-medium text-lg transition-all">
+                        작품 보기
+                    </a>
+                </div>
+                
+                <div class="mt-16 flex items-center gap-8 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <span>4.98</span>
+                    </div>
+                    <div>인천 연수구</div>
+                    <div>10년 경력 전문가</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+            <div class="text-xs tracking-widest mb-2">SCROLL</div>
+            <div class="w-px h-12 bg-white/50"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-block bg-rose-100 text-rose-600 text-sm font-medium px-4 py-2 rounded-full mb-6">
+                        SINCE 2018
+                    </div>
+                    <h2 class="section-title text-5xl font-bold mb-6 leading-tight">
+                        특별한 순간을<br>만드는 공간
+                    </h2>
+                    <p class="text-lg text-zinc-600 leading-relaxed mb-8">
+                        마리 미용실은 단순한 헤어숍이 아닙니다. 
+                        고객 한 분 한 분의 개성과 아름다움을 존중하며, 
+                        가장 어울리는 스타일을 제안하는 <strong>맞춤형 미용 공간</strong>입니다.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="text-4xl font-semibold text-rose-600">5000+</div>
+                            <div class="text-sm text-zinc-500">누적 고객</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-semibold text-rose-600">98%</div>
+                            <div class="text-sm text-zinc-500">재방문율</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://picsum.photos/id/1016/800/900" 
+                         alt="마리 미용실 내부" 
+                         class="rounded-3xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl max-w-[220px]">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-3xl">✂️</div>
+                            <div>
+                                <div class="font-medium">대표 원장</div>
+                                <div class="text-rose-600 font-semibold">김마리</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-zinc-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-5xl font-bold mb-4">프리미엄 시술</h2>
+                <p class="text-zinc-400 max-w-md mx-auto">트렌디하면서도 오래가는 스타일을 제안합니다</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card -->
+                <div class="bg-zinc-800 rounded-3xl overflow-hidden group">
+                    <div class="h-64 bg-zinc-700 relative">
+                        <img src="https://picsum.photos/id/201/600/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <div class="absolute top-4 right-4 bg-black/70 px-4 py-1 text-xs rounded-full">인기</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-semibold">컷 &amp; 스타일링</h3>
+                            <span class="text-rose-400 font-medium">39,000원~</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            얼굴형, 두상, 라이프스타일에 맞춘 정밀 커트와 완벽한 스타일링
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-800 rounded-3xl overflow-hidden group">
+                    <div class="h-64 bg-zinc-700 relative">
+                        <img src="https://picsum.photos/id/866/600/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-semibold">염색 / 탈색</h3>
+                            <span class="text-rose-400 font-medium">89,000원~</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            트렌디한 컬러부터 자연스러운 명도 조절까지, 손상 최소화 기술
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-800 rounded-3xl overflow-hidden group">
+                    <div class="h-64 bg-zinc-700 relative">
+                        <img src="https://picsum.photos/id/1018/600/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-semibold">펌 / 매직</h3>
+                            <span class="text-rose-400 font-medium">120,000원~</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            볼륨감 있는 C컬, S컬부터 생머리 매직까지 다양한 펌 기술
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center gap-3 border border-white/50 hover:border-white px-8 py-4 rounded-full text-lg transition-all">
+                    모든 시술 보기
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stylists -->
+    <section id="stylists" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="section-title text-center text-5xl font-bold mb-16">마리의 장인들</h2>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="https://picsum.photos/id/64/400/400" class="w-48 h-48 mx-auto rounded-2xl object-cover shadow-lg mb-6">
+                    <div class="font-semibold text-xl">김마리</div>
+                    <div class="text-rose-600">대표원장 · 12년</div>
+                    <div class="text-sm text-zinc-500 mt-2">컷 &amp; 컬러 전문</div>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/id/65/400/400" class="w-48 h-48 mx-auto rounded-2xl object-cover shadow-lg mb-6">
+                    <div class="font-semibold text-xl">이서연</div>
+                    <div class="text-rose-600">수석 디자이너 · 8년</div>
+                    <div class="text-sm text-zinc-500 mt-2">펌 &amp; 볼륨 전문</div>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/id/66/400/400" class="w-48 h-48 mx-auto rounded-2xl object-cover shadow-lg mb-6">
+                    <div class="font-semibold text-xl">박지훈</div>
+                    <div class="text-rose-600">디자이너 · 6년</div>
+                    <div class="text-sm text-zinc-500 mt-2">남성 &amp; 숏컷 전문</div>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/id/67/400/400" class="w-48 h-48 mx-auto rounded-2xl object-cover shadow-lg mb-6">
+                    <div class="font-semibold text-xl">최은지</div>
+                    <div class="text-rose-600">디자이너 · 5년</div>
+                    <div class="text-sm text-zinc-500 mt-2">염색 &amp; 케어 전문</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-24 bg-zinc-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="section-title text-center text-5xl font-bold mb-4">마리의 작품들</h2>
+            <p class="text-center text-zinc-500 mb-12">고객님들의 변신 순간</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://picsum.photos/id/201/600/600" class="rounded-3xl aspect-square object-cover hover:scale-105 transition-transform cursor-pointer">
+                <img src="https://picsum.photos/id/866/600/600" class="rounded-3xl aspect-square object-cover hover:scale-105 transition-transform cursor-pointer">
+                <img src="https://picsum.photos/id/1018/600/600" class="rounded-3xl aspect-square object-cover hover:scale-105 transition-transform cursor-pointer">
+                <img src="https://picsum.photos/id/133/600/600" class="rounded-3xl aspect-square object-cover hover:scale-105 transition-transform cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="review" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="section-title text-center text-5xl font-bold mb-16">고객님들의 목소리</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-zinc-50 p-8 rounded-3xl">
+                    <div class="flex gap-1 text-amber-400 mb-6">
+                        ★★★★☆
+                    </div>
+                    <p class="italic text-zinc-600 mb-8">
+                        "머리카락이 너무 건강해졌어요. 상담도 꼼꼼하고, 결과물이 기대 이상이었어요!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-300 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">김수진</div>
+                            <div class="text-sm text-zinc-500">연수동</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-50 p-8 rounded-3xl">
+                    <div class="flex gap-1 text-amber-400 mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="italic text-zinc-600 mb-8">
+                        "염색 후에도 머리가 부드러워서 놀랐어요. 직원분들이 모두 친절하셔서 편안하게 다녀왔습니다."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-300 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">박지영</div>
+                            <div class="text-sm text-zinc-500">송도</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-zinc-50 p-8 rounded-3xl">
+                    <div class="flex gap-1 text-amber-400 mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="italic text-zinc-600 mb-8">
+                        "남자친구가 제 머리 스타일 바뀐 거 보고 깜짝 놀랐어요. 최고의 미용실입니다!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-300 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">이민서</div>
+                            <div class="text-sm text-zinc-500">인천</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Reservation -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-rose-50 to-amber-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="section-title text-5xl font-bold mb-6">방문 예약</h2>
+            <p class="text-xl text-zinc-600 mb-12">편안한 미용 경험을 위해 미리 예약해주세요</p>
+            
+            <div class="bg-white rounded-3xl shadow-xl p-12">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="text-left space-y-8">
+                        <div>
+                            <div class="text-sm text-zinc-500 mb-1">📍 주소</div>
+                            <div class="font-medium">인천광역시 연수구 송도동 123-45<br>마리빌딩 2층</div>
+                        </div>
+                        <div>
+                            <div class="text-sm text-zinc-500 mb-1">☎ 전화</div>
+                            <a href="tel:032-123-4567" class="font-medium text-xl hover:text-rose-600">032-123-4567</a>
+                        </div>
+                        <div>
+                            <div class="text-sm text-zinc-500 mb-1">🕒 영업시간</div>
+                            <div class="font-medium">
+                                평일 10:00 - 20:00<br>
+                                주말 09:30 - 19:00<br>
+                                <span class="text-rose-500 text-sm">(매월 둘째 주 월요일 휴무)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <form class="space-y-6">
+                            <input type="text" placeholder="이름" 
+                                   class="w-full px-6 py-4 border border-zinc-200 rounded-2xl focus:outline-none focus:border-rose-300">
+                            <input type="tel" placeholder="연락처" 
+                                   class="w-full px-6 py-4 border border-zinc-200 rounded-2xl focus:outline-none focus:border-rose-300">
+                            <select class="w-full px-6 py-4 border border-zinc-200 rounded-2xl focus:outline-none focus:border-rose-300">
+                                <option>원하는 시술 선택</option>
+                                <option>컷 &amp; 스타일링</option>
+                                <option>염색</option>
+                                <option>펌</option>
+                                <option>기타</option>
+                            </select>
+                            <textarea placeholder="원하시는 스타일이나 요청사항" rows="4"
+                                      class="w-full px-6 py-4 border border-zinc-200 rounded-2xl focus:outline-none focus:border-rose-300"></textarea>
+                            <button type="button"
+                                    class="w-full bg-rose-600 hover:bg-rose-700 text-white py-5 rounded-2xl font-medium text-lg transition-all">
+                                예약 문의하기
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-zinc-400 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center text-white font-bold">마</div>
+                    <span class="text-white text-xl">마리 미용실</span>
+                </div>
+                
+                <div class="text-sm text-center md:text-right">
+                    © 2026 Mari Hair Salon. All Rights Reserved.<br>
+                    인천광역시 연수구 | 사업자등록번호 123-45-67890
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded
+        console.log('%c마리 미용실 웹페이지가 로드되었습니다.', 'color:#e11d48; font-family:monospace');
+        
+        // Simple smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
