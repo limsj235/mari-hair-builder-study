@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미용시술 기록 | 마리 미용실</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' };
+        if (window.parent.document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="treatment-records.css">
+</head>
+<body class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 min-h-screen">
+
+    <div class="page-wrap max-w-4xl mx-auto px-5 py-8">
+        <header class="mb-8">
+            <div class="inline-flex items-center gap-2 bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-300 text-sm font-medium px-4 py-2 rounded-full mb-4">
+                <i class="fa-solid fa-scissors"></i>
+                마리 미용실
+            </div>
+            <h1 id="records-title" class="text-3xl font-bold tracking-tight mb-2">미용시술 기록</h1>
+            <p id="records-subtitle" class="text-zinc-500 dark:text-zinc-400 text-sm">최근 시술 내역 샘플 (10건)</p>
+        </header>
+
+        <div class="mb-6 flex flex-wrap gap-2" id="category-filter">
+            <span class="text-xs text-zinc-500 dark:text-zinc-400 self-center mr-1">시술 분류</span>
+        </div>
+
+        <div id="records-list" class="space-y-3"></div>
+
+        <footer class="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800 text-center text-xs text-zinc-400">
+            ※ 개인정보 보호를 위해 고객명은 일부 마스킹 처리되었습니다.
+        </footer>
+    </div>
+
+    <script src="treatment-records.js"></script>
+</body>
+</html>

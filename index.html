@@ -145,9 +145,10 @@
             
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service Card -->
-                <div class="bg-zinc-800 rounded-3xl overflow-hidden group">
+                <button type="button" data-service-category="cut"
+                        class="service-open-btn text-left bg-zinc-800 rounded-3xl overflow-hidden group cursor-pointer hover:ring-2 hover:ring-rose-500/50 transition-all">
                     <div class="h-64 bg-zinc-700 relative">
-                        <img src="https://picsum.photos/id/201/600/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/id/201/600/400" alt="컷 &amp; 스타일링" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                         <div class="absolute top-4 right-4 bg-black/70 px-4 py-1 text-xs rounded-full">인기</div>
                     </div>
                     <div class="p-8">
@@ -158,12 +159,17 @@
                         <p class="text-zinc-400 text-sm leading-relaxed">
                             얼굴형, 두상, 라이프스타일에 맞춘 정밀 커트와 완벽한 스타일링
                         </p>
+                        <span class="inline-flex items-center gap-2 mt-4 text-sm text-rose-300 font-medium">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            시술 기록 보기
+                        </span>
                     </div>
-                </div>
+                </button>
                 
-                <div class="bg-zinc-800 rounded-3xl overflow-hidden group">
+                <button type="button" data-service-category="color"
+                        class="service-open-btn text-left bg-zinc-800 rounded-3xl overflow-hidden group cursor-pointer hover:ring-2 hover:ring-rose-500/50 transition-all">
                     <div class="h-64 bg-zinc-700 relative">
-                        <img src="https://picsum.photos/id/866/600/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/id/866/600/400" alt="염색 / 탈색" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                     </div>
                     <div class="p-8">
                         <div class="flex justify-between items-start mb-4">
@@ -173,12 +179,17 @@
                         <p class="text-zinc-400 text-sm leading-relaxed">
                             트렌디한 컬러부터 자연스러운 명도 조절까지, 손상 최소화 기술
                         </p>
+                        <span class="inline-flex items-center gap-2 mt-4 text-sm text-rose-300 font-medium">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            시술 기록 보기
+                        </span>
                     </div>
-                </div>
+                </button>
                 
-                <div class="bg-zinc-800 rounded-3xl overflow-hidden group">
+                <button type="button" data-service-category="perm"
+                        class="service-open-btn text-left bg-zinc-800 rounded-3xl overflow-hidden group cursor-pointer hover:ring-2 hover:ring-rose-500/50 transition-all">
                     <div class="h-64 bg-zinc-700 relative">
-                        <img src="https://picsum.photos/id/1018/600/400" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/id/1018/600/400" alt="펌 / 매직" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                     </div>
                     <div class="p-8">
                         <div class="flex justify-between items-start mb-4">
@@ -188,15 +199,20 @@
                         <p class="text-zinc-400 text-sm leading-relaxed">
                             볼륨감 있는 C컬, S컬부터 생머리 매직까지 다양한 펌 기술
                         </p>
+                        <span class="inline-flex items-center gap-2 mt-4 text-sm text-rose-300 font-medium">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            시술 기록 보기
+                        </span>
                     </div>
-                </div>
+                </button>
             </div>
             
             <div class="text-center mt-12">
-                <a href="#contact" class="inline-flex items-center gap-3 border border-white/50 hover:border-white px-8 py-4 rounded-full text-lg transition-all">
+                <button type="button" id="all-services-open-btn" data-service-category="all"
+                        class="inline-flex items-center gap-3 border border-white/50 hover:border-white hover:bg-white/10 px-8 py-4 rounded-full text-lg transition-all">
                     모든 시술 보기
                     <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -401,11 +417,29 @@
         </div>
     </footer>
 
+    <!-- Treatment Records Modal -->
+    <div id="services-modal" class="content-modal hidden" aria-hidden="true" role="dialog" aria-labelledby="services-modal-title">
+        <div id="services-modal-backdrop" class="content-modal-backdrop"></div>
+        <div class="content-modal-panel content-modal-panel--wide">
+            <div class="content-modal-header">
+                <h3 id="services-modal-title" class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-clipboard-list text-rose-400"></i>
+                    미용시술 기록
+                </h3>
+                <button id="services-modal-close" type="button" aria-label="닫기"
+                        class="w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-300 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <iframe id="services-iframe" class="content-modal-iframe content-modal-iframe--tall" title="미용시술 기록" loading="lazy"></iframe>
+        </div>
+    </div>
+
     <!-- Lotto Modal -->
-    <div id="lotto-modal" class="lotto-modal hidden" aria-hidden="true" role="dialog" aria-labelledby="lotto-modal-title">
-        <div id="lotto-modal-backdrop" class="lotto-modal-backdrop"></div>
-        <div class="lotto-modal-panel">
-            <div class="lotto-modal-header">
+    <div id="lotto-modal" class="content-modal hidden" aria-hidden="true" role="dialog" aria-labelledby="lotto-modal-title">
+        <div id="lotto-modal-backdrop" class="content-modal-backdrop"></div>
+        <div class="content-modal-panel">
+            <div class="content-modal-header">
                 <h3 id="lotto-modal-title" class="text-lg font-bold text-white flex items-center gap-2">
                     <i class="fa-solid fa-ticket text-amber-400"></i>
                     로또 6/45 번호 생성기
@@ -415,7 +449,7 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <iframe id="lotto-iframe" class="lotto-modal-iframe" title="로또 번호 생성기" loading="lazy"></iframe>
+            <iframe id="lotto-iframe" class="content-modal-iframe" title="로또 번호 생성기" loading="lazy"></iframe>
         </div>
     </div>
 

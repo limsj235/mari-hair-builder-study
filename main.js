@@ -36,6 +36,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const GAME_LOTTO_PATH = 'games/lotto.html';
+    const TREATMENT_RECORDS_PATH = 'services/treatment-records.html';
+
+    const servicesModal = document.getElementById('services-modal');
+    const servicesIframe = document.getElementById('services-iframe');
+    const servicesCloseBtn = document.getElementById('services-modal-close');
+    const servicesBackdrop = document.getElementById('services-modal-backdrop');
+
+    function openServicesModal(category = 'all') {
+        const query = category && category !== 'all' ? `?category=${category}` : '';
+        servicesIframe.src = `${TREATMENT_RECORDS_PATH}${query}`;
+        servicesModal.classList.remove('hidden');
+        servicesModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+    }
+
+    function closeServicesModal() {
+        servicesModal.classList.add('hidden');
+        servicesModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        servicesIframe.src = '';
+    }
+
+    document.querySelectorAll('.service-open-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            openServicesModal(btn.dataset.serviceCategory);
+        });
+    });
+
+    const allServicesBtn = document.getElementById('all-services-open-btn');
+    if (allServicesBtn) {
+        allServicesBtn.addEventListener('click', () => {
+            openServicesModal(allServicesBtn.dataset.serviceCategory);
+        });
+    }
+
+    servicesCloseBtn.addEventListener('click', closeServicesModal);
+    servicesBackdrop.addEventListener('click', closeServicesModal);
 
     const lottoModal = document.getElementById('lotto-modal');
     const lottoIframe = document.getElementById('lotto-iframe');
@@ -62,7 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     lottoBackdrop.addEventListener('click', closeLottoModal);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !lottoModal.classList.contains('hidden')) {
+        if (e.key !== 'Escape') return;
+        if (!servicesModal.classList.contains('hidden')) {
+            closeServicesModal();
+        } else if (!lottoModal.classList.contains('hidden')) {
             closeLottoModal();
         }
     });
