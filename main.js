@@ -23,6 +23,46 @@ document.addEventListener('DOMContentLoaded', () => {
         setTheme(nextTheme);
     });
 
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuIconOpen = document.getElementById('mobile-menu-icon-open');
+    const mobileMenuIconClose = document.getElementById('mobile-menu-icon-close');
+
+    function closeMobileMenu() {
+        if (!mobileMenu || mobileMenu.classList.contains('hidden')) return;
+        mobileMenu.classList.add('hidden');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', '메뉴 열기');
+        mobileMenuIconOpen.classList.remove('hidden');
+        mobileMenuIconClose.classList.add('hidden');
+        document.body.classList.remove('mobile-menu-open');
+    }
+
+    function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        mobileMenuToggle.setAttribute('aria-label', '메뉴 닫기');
+        mobileMenuIconOpen.classList.add('hidden');
+        mobileMenuIconClose.classList.remove('hidden');
+        document.body.classList.add('mobile-menu-open');
+    }
+
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                openMobileMenu();
+            } else {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            closeMobileMenu();
+        }
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             if (this.getAttribute('href') !== '#') {
@@ -31,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
+                closeMobileMenu();
             }
         });
     });
@@ -104,6 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
             closeServicesModal();
         } else if (!lottoModal.classList.contains('hidden')) {
             closeLottoModal();
+        } else {
+            closeMobileMenu();
         }
     });
 });

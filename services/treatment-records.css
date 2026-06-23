@@ -33,3 +33,9 @@ body {
 .status-done { color: #16a34a; }
 .status-progress { color: #d97706; }
 .status-booked { color: #2563eb; }
+
+@media (max-width: 639px) {
+    .record-card {
+        padding: 1rem !important;
+    }
+}

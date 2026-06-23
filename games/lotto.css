@@ -43,3 +43,11 @@ body.modal-embed .page-wrap {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
+
+@media (max-width: 639px) {
+    .lotto-ball {
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
+    }
+}

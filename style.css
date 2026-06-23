@@ -94,6 +94,58 @@ body, nav, section, footer {
     }
 }
 
-body.modal-open {
+body.modal-open,
+body.mobile-menu-open {
     overflow: hidden;
+}
+
+.mobile-menu {
+    animation: menu-in 0.2s ease;
+}
+
+@keyframes menu-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html {
+    scroll-padding-top: 5rem;
+}
+
+@media (max-width: 639px) {
+    html {
+        scroll-padding-top: 4.5rem;
+    }
+
+    .content-modal {
+        padding: 0.5rem;
+        align-items: flex-end;
+    }
+
+    .content-modal-panel,
+    .content-modal-panel--wide {
+        max-width: 100%;
+        max-height: 92vh;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .content-modal-iframe,
+    .content-modal-iframe--tall {
+        height: 58vh;
+        min-height: 280px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    .content-modal-iframe,
+    .content-modal-iframe--tall {
+        min-height: 420px;
+    }
 }
