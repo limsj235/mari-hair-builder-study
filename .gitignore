@@ -2,3 +2,6 @@ terminals/
 env/
 logs/
 바이브코딩.txt
+.env
+.env.*
+.wrangler/
