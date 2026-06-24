@@ -47,10 +47,29 @@ function initPhoneReservation() {
     });
 }
 
+function updateNavHeight() {
+    const nav = document.getElementById('site-nav');
+    const header = document.getElementById('nav-header');
+    if (!nav || !header) return;
+    const height = header.getBoundingClientRect().bottom - nav.getBoundingClientRect().top;
+    document.documentElement.style.setProperty('--nav-height', `${Math.ceil(height)}px`);
+}
+
+function scrollToTarget(target) {
+    if (!target) return;
+    updateNavHeight();
+    const navHeight = parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue('--nav-height')
+    ) || 72;
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('%c마리 미용실 웹페이지가 로드되었습니다.', 'color:#e11d48; font-family:monospace');
 
     initPhoneReservation();
+    updateNavHeight();
 
     const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
@@ -82,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openMobileMenu() {
+        updateNavHeight();
         mobileMenu.classList.remove('hidden');
         mobileMenuToggle.setAttribute('aria-expanded', 'true');
         mobileMenuToggle.setAttribute('aria-label', '메뉴 닫기');
@@ -101,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('resize', () => {
+        updateNavHeight();
         if (window.innerWidth >= 768) {
             closeMobileMenu();
         }
@@ -115,9 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 dialSalon();
             } else {
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                scrollToTarget(target);
             }
             closeMobileMenu();
         });
