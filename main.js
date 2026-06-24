@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const GAME_LOTTO_PATH = 'games/lotto.html';
     const TREATMENT_RECORDS_PATH = 'services/treatment-records.html';
 
     const servicesModal = document.getElementById('services-modal');
@@ -115,36 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
     servicesCloseBtn.addEventListener('click', closeServicesModal);
     servicesBackdrop.addEventListener('click', closeServicesModal);
 
-    const lottoModal = document.getElementById('lotto-modal');
-    const lottoIframe = document.getElementById('lotto-iframe');
-    const lottoOpenBtn = document.getElementById('lotto-open-btn');
-    const lottoCloseBtn = document.getElementById('lotto-modal-close');
-    const lottoBackdrop = document.getElementById('lotto-modal-backdrop');
-
-    function openLottoModal() {
-        lottoIframe.src = GAME_LOTTO_PATH;
-        lottoModal.classList.remove('hidden');
-        lottoModal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('modal-open');
-    }
-
-    function closeLottoModal() {
-        lottoModal.classList.add('hidden');
-        lottoModal.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('modal-open');
-        lottoIframe.src = '';
-    }
-
-    lottoOpenBtn.addEventListener('click', openLottoModal);
-    lottoCloseBtn.addEventListener('click', closeLottoModal);
-    lottoBackdrop.addEventListener('click', closeLottoModal);
-
     document.addEventListener('keydown', (e) => {
         if (e.key !== 'Escape') return;
         if (!servicesModal.classList.contains('hidden')) {
             closeServicesModal();
-        } else if (!lottoModal.classList.contains('hidden')) {
-            closeLottoModal();
         } else {
             closeMobileMenu();
         }
