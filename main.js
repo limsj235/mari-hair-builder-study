@@ -66,7 +66,7 @@ function scrollToTarget(target) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('%c마리 미용실 웹페이지가 로드되었습니다.', 'color:#e11d48; font-family:monospace');
+    console.log('%c마리 헤어 웹페이지가 로드되었습니다.', 'color:#e11d48; font-family:monospace');
 
     initPhoneReservation();
     updateNavHeight();
