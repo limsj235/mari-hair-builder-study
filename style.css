@@ -12,7 +12,7 @@ body, nav, section, footer {
     position: relative;
     isolation: isolate;
     background-color: #0f172a;
-    background-image: url('images/title.jpg');
+    background-image: url('images/배경.jpg');
     background-size: cover;
     background-position: center 38%;
     background-repeat: no-repeat;
