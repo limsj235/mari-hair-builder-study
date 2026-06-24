@@ -108,19 +108,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            if (this.getAttribute('href') !== '#') {
-                e.preventDefault();
-                if (this.classList.contains('js-reserve-call') && isMobileDevice()) {
-                    dialSalon();
-                    closeMobileMenu();
-                    return;
-                }
+            e.preventDefault();
+            if (this.getAttribute('href') === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (this.classList.contains('js-reserve-call') && isMobileDevice()) {
+                dialSalon();
+            } else {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
-                closeMobileMenu();
             }
+            closeMobileMenu();
         });
     });
 

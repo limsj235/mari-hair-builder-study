@@ -11,9 +11,9 @@
     <script>
         tailwind.config = { darkMode: 'class' };
     </script>
-    <script src="main.js?v=4"></script>
+    <script src="main.js?v=5"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 overflow-x-hidden">
 
@@ -21,13 +21,16 @@
     <nav class="bg-white dark:bg-zinc-900/95 dark:border-b dark:border-zinc-800 shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-5 flex justify-between items-center gap-3">
             <a href="#" class="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-rose-600 rounded-full flex items-center justify-center text-white font-bold text-xl sm:text-2xl shrink-0">마</div>
+                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-rose-600 rounded-full flex items-center justify-center text-white text-sm sm:text-base shrink-0" aria-hidden="true">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
                 <span class="text-lg sm:text-2xl font-bold tracking-tight truncate">마리 헤어</span>
             </a>
             
             <div class="hidden md:flex items-center gap-6 lg:gap-10 text-base lg:text-xl font-medium">
                 <a href="#about" class="nav-link hover:text-rose-600 dark:hover:text-rose-400 transition-colors">소개</a>
                 <a href="#services" class="nav-link hover:text-rose-600 dark:hover:text-rose-400 transition-colors">시술</a>
+                <a href="#location" class="nav-link hover:text-rose-600 dark:hover:text-rose-400 transition-colors">오시는길</a>
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3 shrink-0">
@@ -53,6 +56,7 @@
             <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
                 <a href="#about" class="nav-link mobile-nav-link rounded-xl px-4 py-3 text-base font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">소개</a>
                 <a href="#services" class="nav-link mobile-nav-link rounded-xl px-4 py-3 text-base font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">시술</a>
+                <a href="#location" class="nav-link mobile-nav-link rounded-xl px-4 py-3 text-base font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">오시는길</a>
                 <a href="#contact" class="js-reserve-call sm:hidden mt-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-phone"></i>
                     전화 예약
@@ -76,16 +80,10 @@
                     <a href="#contact" 
                        class="js-reserve-call bg-white text-zinc-900 hover:bg-amber-100 px-6 sm:px-10 py-3.5 sm:py-4 rounded-full font-medium text-base sm:text-lg transition-all flex items-center justify-center gap-3">
                         <span class="js-reserve-label-mobile sm:hidden">전화 예약</span>
-                        <span class="js-reserve-label-desktop hidden sm:inline">예약 하기</span>
+                        <span class="js-reserve-label-desktop hidden sm:inline">매장 정보</span>
                         <i class="fa-solid fa-phone sm:hidden"></i>
                         <i class="fa-solid fa-arrow-right hidden sm:inline"></i>
                     </a>
-                </div>
-                <div class="mt-4 sm:mt-6 flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-star text-amber-400"></i>
-                        분당구 정자동 32년 경력 전문가
-                    </div>
                 </div>
             </div>
         </div>
@@ -150,7 +148,6 @@
                     <div class="p-5 sm:p-8">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-3 mb-3 sm:mb-4">
                             <h3 class="text-xl sm:text-2xl font-semibold">컷 &amp; 스타일링</h3>
-                            <span class="text-rose-400 font-medium">39,000원~</span>
                         </div>
                         <p class="text-zinc-400 text-sm leading-relaxed">
                             얼굴형, 두상, 라이프스타일에 맞춘 정밀 커트와 완벽한 스타일링
@@ -170,7 +167,6 @@
                     <div class="p-5 sm:p-8">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-3 mb-3 sm:mb-4">
                             <h3 class="text-xl sm:text-2xl font-semibold">염색 / 탈색</h3>
-                            <span class="text-rose-400 font-medium">89,000원~</span>
                         </div>
                         <p class="text-zinc-400 text-sm leading-relaxed">
                             트렌디한 컬러부터 자연스러운 명도 조절까지, 손상 최소화 기술
@@ -190,7 +186,6 @@
                     <div class="p-5 sm:p-8">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-3 mb-3 sm:mb-4">
                             <h3 class="text-xl sm:text-2xl font-semibold">펌 / 매직</h3>
-                            <span class="text-rose-400 font-medium">120,000원~</span>
                         </div>
                         <p class="text-zinc-400 text-sm leading-relaxed">
                             볼륨감 있는 C컬, S컬부터 생머리 매직까지 다양한 펌 기술
@@ -208,13 +203,10 @@
     <!-- Contact & Reservation -->
     <section id="contact" class="py-16 sm:py-24 bg-gradient-to-br from-rose-50 to-amber-50 dark:from-zinc-900 dark:to-zinc-950">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">전화 예약</h2>
+            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">매장 정보</h2>
             
             <div class="bg-white dark:bg-zinc-800 rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-10 lg:p-12">
                 <div class="max-w-lg mx-auto text-left space-y-6 sm:space-y-8">
-                    <div>
-                        <div class="font-medium">📍 주소 : 성남시 분당구 정자동 219-2</div>
-                    </div>
                     <div>
                         <div class="font-medium">☎ 전화</div>
                         <a href="tel:0317269790" class="js-phone-call font-medium text-xl hover:text-rose-600 dark:hover:text-rose-400">031-726-9790</a>
@@ -237,6 +229,26 @@
                     </a>
                     <p class="js-phone-hint-mobile text-sm text-zinc-500 dark:text-zinc-400 mt-4">탭하면 바로 전화가 연결됩니다</p>
                 </div>
+
+                <div id="location" class="max-w-lg mx-auto mt-8 sm:mt-10 pt-8 sm:pt-10 border-t border-zinc-200 dark:border-zinc-700 text-left">
+                    <div class="font-medium mb-3">📍 주소 : 성남시 분당구 정자동 219-2</div>
+                    <div class="store-map rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                        <iframe
+                            title="마리 헤어 오시는 길"
+                            src="https://maps.google.com/maps?q=%EC%84%B1%EB%82%A8%EC%8B%9C+%EB%B6%84%EB%8B%B9%EA%B5%AC+%EC%A0%95%EC%9E%90%EB%8F%99+219-2&hl=ko&z=17&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <a href="https://map.naver.com/v5/search/%EC%84%B1%EB%82%A8%EC%8B%9C%20%EB%B6%84%EB%8B%B9%EA%B5%AC%20%EC%A0%95%EC%9E%90%EB%8F%99%20219-2"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 mt-3 text-sm text-rose-600 dark:text-rose-400 hover:underline">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        네이버 지도에서 길찾기
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -245,10 +257,12 @@
     <footer class="bg-zinc-900 text-zinc-400 py-10 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center text-white font-bold">마</div>
+                <a href="#" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+                    <div class="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center text-white text-xs shrink-0" aria-hidden="true">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
                     <span class="text-white text-xl">마리 헤어</span>
-                </div>
+                </a>
                 
                 <div class="text-sm text-center md:text-right">
                     © 2026 Mari Hair Salon. All Rights Reserved.<br>

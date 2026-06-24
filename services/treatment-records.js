@@ -8,7 +8,6 @@ const RECORDS = [
         categoryLabel: '컷 & 스타일링',
         service: '레이어드 컷 + 드라이 스타일링',
         stylist: '임*회',
-        price: '45,000원',
         duration: '60분',
         status: 'done',
         statusLabel: '완료',
@@ -23,7 +22,6 @@ const RECORDS = [
         categoryLabel: '염색 / 탈색',
         service: '애쉬 브라운 톤다운 염색',
         stylist: '임*회',
-        price: '120,000원',
         duration: '150분',
         status: 'done',
         statusLabel: '완료',
@@ -38,7 +36,6 @@ const RECORDS = [
         categoryLabel: '펌 / 매직',
         service: '볼륨 C컬 디지털 펌',
         stylist: '임*회',
-        price: '150,000원',
         duration: '180분',
         status: 'done',
         statusLabel: '완료',
@@ -53,7 +50,6 @@ const RECORDS = [
         categoryLabel: '컷 & 스타일링',
         service: '남성 가일 컷 + 두피 케어',
         stylist: '임*회',
-        price: '39,000원',
         duration: '45분',
         status: 'done',
         statusLabel: '완료',
@@ -68,7 +64,6 @@ const RECORDS = [
         categoryLabel: '염색 / 탈색',
         service: '핑크 베이지 탈색 + 풀컬러',
         stylist: '임*회',
-        price: '210,000원',
         duration: '240분',
         status: 'done',
         statusLabel: '완료',
@@ -83,7 +78,6 @@ const RECORDS = [
         categoryLabel: '펌 / 매직',
         service: '스트레이트 매직 (생머리)',
         stylist: '임*회',
-        price: '180,000원',
         duration: '200분',
         status: 'done',
         statusLabel: '완료',
@@ -98,7 +92,6 @@ const RECORDS = [
         categoryLabel: '클리닉 / 케어',
         service: '단백질 집중 트리트먼트',
         stylist: '임*회',
-        price: '55,000원',
         duration: '40분',
         status: 'done',
         statusLabel: '완료',
@@ -113,7 +106,6 @@ const RECORDS = [
         categoryLabel: '컷 & 스타일링',
         service: '허쉬컷 + 앞머리 컷',
         stylist: '임*회',
-        price: '48,000원',
         duration: '70분',
         status: 'done',
         statusLabel: '완료',
@@ -128,7 +120,6 @@ const RECORDS = [
         categoryLabel: '염색 / 탈색',
         service: '브릿지 하이라이트 염색',
         stylist: '임*회',
-        price: '95,000원',
         duration: '120분',
         status: 'progress',
         statusLabel: '시술 중',
@@ -143,7 +134,6 @@ const RECORDS = [
         categoryLabel: '펌 / 매직',
         service: 'S컬 볼륨펌 예약',
         stylist: '임*회',
-        price: '135,000원',
         duration: '160분',
         status: 'booked',
         statusLabel: '예약',
@@ -258,9 +248,8 @@ function renderRecords(category) {
                         <div class="font-medium">${record.date} ${record.time}</div>
                     </div>
                     <div>
-                        <div class="text-xs text-zinc-400 mb-0.5">금액 / 소요</div>
-                        <div class="font-medium text-rose-600 dark:text-rose-400">${record.price}</div>
-                        <div class="text-xs text-zinc-400">${record.duration}</div>
+                        <div class="text-xs text-zinc-400 mb-0.5">소요</div>
+                        <div class="font-medium">${record.duration}</div>
                     </div>
                 </div>
             </article>
