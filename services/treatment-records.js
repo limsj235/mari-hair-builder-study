@@ -166,7 +166,7 @@ function renderFilter(activeCategory) {
         const isActive = key === activeCategory;
         return `
             <button type="button" data-category="${key}"
-                    class="filter-chip px-3 py-1.5 rounded-full text-xs font-medium transition-colors
+                    class="filter-chip shrink-0 px-3 py-2 sm:py-1.5 rounded-full text-xs font-medium transition-colors
                            ${isActive
                                ? 'bg-rose-600 text-white'
                                : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-700'}">
@@ -176,7 +176,7 @@ function renderFilter(activeCategory) {
     }).join('');
 
     container.innerHTML = `
-        <span class="text-xs text-zinc-500 dark:text-zinc-400 self-center mr-1">시술 분류</span>
+        <span class="text-xs text-zinc-500 dark:text-zinc-400 self-center mr-1 shrink-0">시술 분류</span>
         ${chips}
     `;
 
@@ -217,7 +217,7 @@ function renderRecords(category) {
         const highlight = category !== 'all' && record.category === category ? 'highlight' : '';
 
         return `
-            <article class="record-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 ${highlight}">
+            <article class="record-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl sm:rounded-2xl p-4 sm:p-5 ${highlight}">
                 <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
                     <div class="flex items-center gap-2 flex-wrap">
                         <span class="text-xs font-mono text-zinc-400">${record.id}</span>
@@ -234,7 +234,7 @@ function renderRecords(category) {
                 <h2 class="font-semibold text-base mb-1">${record.service}</h2>
                 <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">${record.note}</p>
 
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-sm">
                     <div>
                         <div class="text-xs text-zinc-400 mb-0.5">고객</div>
                         <div class="font-medium">${record.customer}</div>
@@ -245,7 +245,7 @@ function renderRecords(category) {
                     </div>
                     <div>
                         <div class="text-xs text-zinc-400 mb-0.5">일시</div>
-                        <div class="font-medium">${record.date} ${record.time}</div>
+                        <div class="font-medium text-xs sm:text-sm">${record.date}<br class="sm:hidden"><span class="hidden sm:inline"> </span>${record.time}</div>
                     </div>
                     <div>
                         <div class="text-xs text-zinc-400 mb-0.5">소요</div>

@@ -1,7 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     font-family: 'Noto Sans KR', system-ui, sans-serif;
+    overflow-x: clip;
+}
+
+.safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.filter-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.filter-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 .record-card {
@@ -37,5 +62,9 @@ body {
 @media (max-width: 639px) {
     .record-card {
         padding: 1rem !important;
+    }
+
+    .filter-scroll .filter-chip {
+        flex-shrink: 0;
     }
 }

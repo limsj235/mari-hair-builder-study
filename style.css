@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     font-family: 'Noto Sans KR', system-ui, sans-serif;
+    overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
 }
 
 body, nav, section, footer {
@@ -178,12 +196,20 @@ body.mobile-menu-open {
 }
 
 html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: calc(5rem + env(safe-area-inset-top, 0px));
+}
+
+.nav-safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 @media (max-width: 639px) {
     html {
-        scroll-padding-top: 4.5rem;
+        scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px));
     }
 
     .content-modal {
@@ -210,5 +236,16 @@ html {
     .content-modal-iframe,
     .content-modal-iframe--tall {
         min-height: 420px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

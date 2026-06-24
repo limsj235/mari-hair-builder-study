@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -11,14 +11,14 @@
     <script>
         tailwind.config = { darkMode: 'class' };
     </script>
-    <script src="main.js?v=5"></script>
+    <script src="main.js?v=6"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="bg-white dark:bg-zinc-900/95 dark:border-b dark:border-zinc-800 shadow-md fixed w-full z-50">
+    <nav class="nav-safe-top bg-white dark:bg-zinc-900/95 dark:border-b dark:border-zinc-800 shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-5 flex justify-between items-center gap-3">
             <a href="#" class="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 bg-rose-600 rounded-full flex items-center justify-center text-white text-sm sm:text-base shrink-0" aria-hidden="true">
@@ -66,7 +66,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg relative min-h-[50dvh] flex items-center text-white">
+    <section class="hero-bg relative min-h-[55dvh] sm:min-h-[50dvh] flex items-center text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-8 sm:pb-10 w-full">
             <div class="max-w-2xl">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
@@ -209,8 +209,8 @@
                 <div class="max-w-lg mx-auto text-left space-y-6 sm:space-y-8">
                     <div>
                         <div class="font-medium">☎ 전화</div>
-                        <a href="tel:0317269790" class="js-phone-call font-medium text-xl hover:text-rose-600 dark:hover:text-rose-400">031-726-9790</a>
-                        <span class="js-phone-display hidden font-medium text-xl">031-726-9790</span>
+                        <a href="tel:0317269790" class="js-phone-call font-medium text-lg sm:text-xl hover:text-rose-600 dark:hover:text-rose-400 break-all sm:break-normal">031-726-9790</a>
+                        <span class="js-phone-display hidden font-medium text-lg sm:text-xl">031-726-9790</span>
                     </div>
                     <div>
                         <div class="font-medium">🕒 영업시간</div>
@@ -254,7 +254,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-zinc-900 text-zinc-400 py-10 sm:py-16">
+    <footer class="safe-bottom bg-zinc-900 text-zinc-400 py-10 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                 <a href="#" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
@@ -264,8 +264,9 @@
                     <span class="text-white text-xl">마리 헤어</span>
                 </a>
                 
-                <div class="text-sm text-center md:text-right">
-                    © 2026 Mari Hair Salon. All Rights Reserved.<br>
+                <div class="text-xs sm:text-sm text-center md:text-right leading-relaxed px-2 sm:px-0">
+                    © 2026 Mari Hair Salon. All Rights Reserved.<br class="hidden sm:inline">
+                    <span class="sm:hidden"><br></span>
                     성남시 분당구 | 사업자등록번호 123-45-67890
                 </div>
             </div>
