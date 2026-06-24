@@ -6,8 +6,51 @@
     }
 })();
 
+const SALON_PHONE = '0317269790';
+
+function isMobileDevice() {
+    const ua = navigator.userAgent || '';
+    const mobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+    const touchPrimary = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    return mobileUA || touchPrimary;
+}
+
+function dialSalon() {
+    window.location.href = `tel:${SALON_PHONE}`;
+}
+
+function initPhoneReservation() {
+    const mobile = isMobileDevice();
+
+    document.querySelectorAll('.js-phone-call').forEach(el => {
+        if (mobile) {
+            el.href = `tel:${SALON_PHONE}`;
+            el.classList.remove('hidden', 'pointer-events-none', 'opacity-60', 'cursor-default');
+            el.removeAttribute('aria-disabled');
+        } else {
+            el.removeAttribute('href');
+            el.classList.add('hidden');
+            el.setAttribute('aria-disabled', 'true');
+        }
+    });
+
+    document.querySelectorAll('.js-phone-display').forEach(el => {
+        el.classList.toggle('hidden', mobile);
+    });
+
+    document.querySelectorAll('.js-phone-hint-mobile').forEach(el => {
+        el.classList.toggle('hidden', !mobile);
+    });
+
+    document.querySelectorAll('.js-phone-hint-desktop').forEach(el => {
+        el.classList.toggle('hidden', mobile);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('%c마리 미용실 웹페이지가 로드되었습니다.', 'color:#e11d48; font-family:monospace');
+
+    initPhoneReservation();
 
     const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
@@ -67,6 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             if (this.getAttribute('href') !== '#') {
                 e.preventDefault();
+                if (this.classList.contains('js-reserve-call') && isMobileDevice()) {
+                    dialSalon();
+                    closeMobileMenu();
+                    return;
+                }
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });

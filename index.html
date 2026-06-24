@@ -11,7 +11,7 @@
     <script>
         tailwind.config = { darkMode: 'class' };
     </script>
-    <script src="main.js?v=3"></script>
+    <script src="main.js?v=4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=2">
 </head>
@@ -37,7 +37,7 @@
                     <i class="fa-solid fa-sun dark:hidden"></i>
                 </button>
                 <a href="#contact" 
-                   class="hidden sm:inline-flex bg-rose-600 hover:bg-rose-700 text-white px-4 lg:px-6 py-2.5 lg:py-3 rounded-full text-sm font-medium transition-all items-center gap-2">
+                   class="js-reserve-call hidden sm:inline-flex bg-rose-600 hover:bg-rose-700 text-white px-4 lg:px-6 py-2.5 lg:py-3 rounded-full text-sm font-medium transition-all items-center gap-2">
                     <i class="fa-solid fa-scissors"></i>
                     예약하기
                 </a>
@@ -53,45 +53,41 @@
             <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
                 <a href="#about" class="nav-link mobile-nav-link rounded-xl px-4 py-3 text-base font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">소개</a>
                 <a href="#services" class="nav-link mobile-nav-link rounded-xl px-4 py-3 text-base font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">시술</a>
-                <a href="#contact" class="sm:hidden mt-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-scissors"></i>
-                    예약하기
+                <a href="#contact" class="js-reserve-call sm:hidden mt-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    전화 예약
                 </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg relative min-h-[100dvh] flex items-center text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16 w-full">
+    <section class="hero-bg relative min-h-[50dvh] flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-8 sm:pb-10 w-full">
             <div class="max-w-2xl">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
-                    당신의 아름다움을<br>더욱 빛나게
+                    이쁘고 아름답게
                 </h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-rose-100">
+                <p class="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 text-rose-100">
                     분당구 정자동에서 가장 감성적인<br class="hidden sm:inline">
                     <span class="text-amber-300 font-medium">마리 헤어</span>
                 </p>
                 <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                     <a href="#contact" 
-                       class="bg-white text-zinc-900 hover:bg-amber-100 px-6 sm:px-10 py-3.5 sm:py-4 rounded-full font-medium text-base sm:text-lg transition-all flex items-center justify-center gap-3">
-                        예약하기
-                        <i class="fa-solid fa-arrow-right"></i>
+                       class="js-reserve-call bg-white text-zinc-900 hover:bg-amber-100 px-6 sm:px-10 py-3.5 sm:py-4 rounded-full font-medium text-base sm:text-lg transition-all flex items-center justify-center gap-3">
+                        <span class="js-reserve-label-mobile sm:hidden">전화 예약</span>
+                        <span class="js-reserve-label-desktop hidden sm:inline">예약 하기</span>
+                        <i class="fa-solid fa-phone sm:hidden"></i>
+                        <i class="fa-solid fa-arrow-right hidden sm:inline"></i>
                     </a>
                 </div>
-                
-                <div class="mt-10 sm:mt-16 flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm">
+                <div class="mt-4 sm:mt-6 flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm">
                     <div class="flex items-center gap-2">
                         <i class="fa-solid fa-star text-amber-400"></i>
                         분당구 정자동 32년 경력 전문가
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="hidden sm:flex absolute bottom-10 left-1/2 transform -translate-x-1/2 flex-col items-center">
-            <div class="text-xs tracking-widest mb-2">SCROLL</div>
-            <div class="w-px h-12 bg-white/50"></div>
         </div>
     </section>
 
@@ -100,9 +96,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div>
-                    <div class="inline-block bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
-                        SINCE 2018
-                    </div>
                     <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                         정성을 다하는 마리 헤어
                     </h2>
@@ -112,7 +105,7 @@
                         가장 어울리는 스타일을 제안하는 <strong>맞춤형 미용 공간</strong>입니다.
                     </p>
                     <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6 sm:mb-8">
-                        <strong>1인 미용실, 두피클리닉</strong>입니다.
+                        <strong>《1인 미용실, 두피클리닉》</strong>
                     </p>
                     <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6 sm:mb-8">
                         정자동 하이마트 뒷쪽 두향 사이길로 걸어 오시다 보면 있어요^^
@@ -133,15 +126,6 @@
                     <img src="images/어서오세요.jpg"
                          alt="마리 헤어 어서오세요"
                          class="rounded-2xl sm:rounded-3xl shadow-2xl w-full object-cover">
-                    <div class="relative sm:absolute sm:-bottom-6 sm:-right-6 mt-4 sm:mt-0 mx-auto sm:mx-0 bg-white dark:bg-zinc-800 rounded-2xl p-4 sm:p-6 shadow-xl max-w-[220px] w-full sm:w-auto">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900/40 rounded-full flex items-center justify-center text-3xl">✂️</div>
-                            <div>
-                                <div class="font-medium">대표 원장</div>
-                                <div class="text-sm text-zinc-500 dark:text-zinc-400">경력 32년</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -224,35 +208,34 @@
     <!-- Contact & Reservation -->
     <section id="contact" class="py-16 sm:py-24 bg-gradient-to-br from-rose-50 to-amber-50 dark:from-zinc-900 dark:to-zinc-950">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">방문 예약</h2>
-            <p class="text-base sm:text-xl text-zinc-600 dark:text-zinc-300 mb-8 sm:mb-12">전화로 편하게 예약해주세요</p>
+            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">전화 예약</h2>
             
             <div class="bg-white dark:bg-zinc-800 rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-10 lg:p-12">
                 <div class="max-w-lg mx-auto text-left space-y-6 sm:space-y-8">
                     <div>
-                        <div class="text-sm text-zinc-500 dark:text-zinc-400 mb-1">📍 주소</div>
-                        <div class="font-medium">성남시 분당구 정자동 219-2<br> 1층</div>
+                        <div class="font-medium">📍 주소 : 성남시 분당구 정자동 219-2</div>
                     </div>
                     <div>
-                        <div class="text-sm text-zinc-500 dark:text-zinc-400 mb-1">☎ 전화</div>
-                        <a href="tel:0317269790" class="font-medium text-xl hover:text-rose-600 dark:hover:text-rose-400">031-726-9790</a>
+                        <div class="font-medium">☎ 전화</div>
+                        <a href="tel:0317269790" class="js-phone-call font-medium text-xl hover:text-rose-600 dark:hover:text-rose-400">031-726-9790</a>
+                        <span class="js-phone-display hidden font-medium text-xl">031-726-9790</span>
                     </div>
                     <div>
-                        <div class="text-sm text-zinc-500 dark:text-zinc-400 mb-1">🕒 영업시간</div>
+                        <div class="font-medium">🕒 영업시간</div>
                         <div class="font-medium">
-                            평일 10:00 - 19:00<br>
-                            <span class="text-rose-500 text-sm">(매주 수요일 일요일 휴무)</span>
+                            평일 및 토요일 10:00 - 19:00<br>
+                            <span class="text-red-700 text-sm">(매주 수요일 일요일 휴무)</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-8 sm:mt-10 text-center">
                     <a href="tel:0317269790"
-                       class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-rose-600 hover:bg-rose-700 active:scale-[0.98] text-white px-8 py-5 rounded-2xl font-medium text-lg transition-all">
+                       class="js-phone-call w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-rose-600 hover:bg-rose-700 active:scale-[0.98] text-white px-8 py-5 rounded-2xl font-medium text-lg transition-all">
                         <i class="fa-solid fa-phone"></i>
-                        전화로 예약하기
+                        전화 예약
                     </a>
-                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-4">모바일에서 탭하면 바로 전화가 연결됩니다</p>
+                    <p class="js-phone-hint-mobile text-sm text-zinc-500 dark:text-zinc-400 mt-4">탭하면 바로 전화가 연결됩니다</p>
                 </div>
             </div>
         </div>
