@@ -72,6 +72,10 @@ body, nav, section, footer {
     }
 
     .hero-content {
+        min-height: 55dvh;
+    }
+
+    .hero-inner {
         justify-content: flex-end;
     }
 
