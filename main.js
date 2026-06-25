@@ -71,6 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initPhoneReservation();
     updateNavHeight();
 
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        heroVideo.muted = true;
+        heroVideo.defaultMuted = true;
+        heroVideo.play().catch(() => {});
+    }
+
     const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
