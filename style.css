@@ -84,16 +84,6 @@ body, nav, section, footer {
     font-family: 'Playfair Display', sans-serif;
 }
 
-.price-list-img {
-    height: auto;
-    object-fit: contain;
-    background: #fafafa;
-}
-
-.dark .price-list-img {
-    background: #27272a;
-}
-
 .store-map {
     position: relative;
     width: 100%;
