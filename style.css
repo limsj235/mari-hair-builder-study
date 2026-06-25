@@ -71,8 +71,12 @@ body, nav, section, footer {
         object-position: center 32%;
     }
 
+    .hero-content {
+        justify-content: flex-end;
+    }
+
     .hero-cta {
-        padding-bottom: env(safe-area-inset-bottom, 0px);
+        padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
     }
 
     .hero-bg::before {
