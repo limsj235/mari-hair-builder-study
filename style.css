@@ -71,6 +71,10 @@ body, nav, section, footer {
         object-position: center 32%;
     }
 
+    .hero-cta {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
     .hero-bg::before {
         background: linear-gradient(
             180deg,
