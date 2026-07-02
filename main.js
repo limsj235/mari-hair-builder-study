@@ -42,9 +42,6 @@ function initPhoneReservation() {
         el.classList.toggle('hidden', !mobile);
     });
 
-    document.querySelectorAll('.js-phone-hint-desktop').forEach(el => {
-        el.classList.toggle('hidden', mobile);
-    });
 }
 
 function updateNavHeight() {
@@ -176,13 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
             openServicesModal(btn.dataset.serviceCategory);
         });
     });
-
-    const allServicesBtn = document.getElementById('all-services-open-btn');
-    if (allServicesBtn) {
-        allServicesBtn.addEventListener('click', () => {
-            openServicesModal(allServicesBtn.dataset.serviceCategory);
-        });
-    }
 
     servicesCloseBtn.addEventListener('click', closeServicesModal);
     servicesBackdrop.addEventListener('click', closeServicesModal);
