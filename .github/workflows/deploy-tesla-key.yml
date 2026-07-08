@@ -33,5 +33,8 @@ jobs:
             -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN")
           echo "$response" | python3 -c "import sys,json; d=json.load(sys.stdin); print('token_valid:', d.get('success')); exit(0 if d.get('success') else 1)"
 
-      - name: Deploy to Cloudflare Pages
-        run: npx wrangler@3 pages deploy . --project-name=tesla-key-l31 --branch=main
+      - name: List Cloudflare Pages projects
+        run: npx wrangler@3 pages project list
+
+      - name: Deploy to Cloudflare Pages (tesla-key-l31 production)
+        run: npx wrangler@3 pages deploy . --project-name=tesla-key-l31 --branch=production
