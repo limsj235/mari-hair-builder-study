@@ -33,11 +33,5 @@ jobs:
             -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN")
           echo "$response" | python3 -c "import sys,json; d=json.load(sys.stdin); print('token_valid:', d.get('success')); exit(0 if d.get('success') else 1)"
 
-      - name: Prepare pem-only deploy bundle
-        run: |
-          mkdir -p deploy/.well-known/appspecific
-          cp .well-known/appspecific/com.tesla.3p.public-key.pem deploy/.well-known/appspecific/
-          echo "Deploying only public key to tesla-key-l31.pages.dev"
-
       - name: Deploy to tesla-pem-key (tesla-key-l31.pages.dev)
-        run: npx wrangler@3 pages deploy deploy --project-name=tesla-pem-key --branch=main
+        run: npx wrangler@3 pages deploy . --project-name=tesla-pem-key --branch=main
