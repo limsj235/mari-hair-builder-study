@@ -1,0 +1,37 @@
+name: Deploy tesla-key to Cloudflare Pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Checkout tesla-key
+        uses: actions/checkout@v4
+        with:
+          repository: limsj235/tesla-key
+          ref: main
+
+      - name: Verify Cloudflare API token
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN is empty."
+            exit 1
+          fi
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID is empty."
+            exit 1
+          fi
+          response=$(curl -sS "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN")
+          echo "$response" | python3 -c "import sys,json; d=json.load(sys.stdin); print('token_valid:', d.get('success')); exit(0 if d.get('success') else 1)"
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler@3 pages deploy . --project-name=tesla-key --branch=main
